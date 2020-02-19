@@ -1,0 +1,8 @@
+lib/
+.classpath
+.gitattributes
+.project
+bin/
+ffdec.jar
+output/*
+.settings/
