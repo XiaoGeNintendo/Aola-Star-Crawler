@@ -25,6 +25,7 @@ public class YabiThread extends Thread {
 		this.format=format;
 		this.cwork=cwork;
 		this.cdecom=cdecom;
+		AolaCrawler.thd--;
 		log("Init success!");
 	}
 
@@ -69,6 +70,8 @@ public class YabiThread extends Thread {
 	
 	public void run(){
 		try{
+			long last=System.currentTimeMillis();
+			
 			//create the folder
 			folder=new File("yabbi_"+id);
 			if(!folder.exists()){
@@ -181,7 +184,8 @@ public class YabiThread extends Thread {
 				}
 			}
 			
-			log("Gracefully exit!");
+			AolaCrawler.thd++;
+			log("Gracefully exit! Time cost:"+(System.currentTimeMillis()-last)+"ms");
 		}catch(Exception e){
 			e.printStackTrace();
 		}
