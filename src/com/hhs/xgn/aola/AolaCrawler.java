@@ -12,9 +12,6 @@ public class AolaCrawler {
 		AolaCrawler ac=new AolaCrawler();
 		ac.solve();
 	}
-
-	public static int thd=0;
-	
 	public void solve(){
 		Scanner sc=new Scanner(System.in);
 		
@@ -25,18 +22,12 @@ public class AolaCrawler {
 		System.out.println("Please input format(gif/svg):");
 		String format=sc.next();
 		
-		System.out.println("Thread count:");
-		thd=sc.nextInt();
-		
 		System.out.println("Skip download?");
 		boolean cwork=sc.nextBoolean();
 		System.out.println("Skip decompress?");
 		boolean cdecom=sc.nextBoolean();
 		
 		for(int i=l;i<=r;i++){
-			while(thd==0){
-				
-			}
 			
 			Thread t=new YabiThread(i,format,cwork,cdecom);
 			t.setName("Yabi"+i);

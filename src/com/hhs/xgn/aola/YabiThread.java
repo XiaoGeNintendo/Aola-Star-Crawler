@@ -25,7 +25,6 @@ public class YabiThread extends Thread {
 		this.format=format;
 		this.cwork=cwork;
 		this.cdecom=cdecom;
-		AolaCrawler.thd--;
 		log("Init success!");
 	}
 
@@ -184,7 +183,6 @@ public class YabiThread extends Thread {
 				}
 			}
 			
-			AolaCrawler.thd++;
 			log("Gracefully exit! Time cost:"+(System.currentTimeMillis()-last)+"ms");
 		}catch(Exception e){
 			e.printStackTrace();
